@@ -1,0 +1,43 @@
+<div class="form-container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+        <mat-form-field appearance="fill">
+            <mat-label>Amount</mat-label>
+            <input matInput formControlName="amount" placeholder="Enter your Amount" />
+            <mat-error *ngIf="form.controls['amount']?.hasError('required')">Amount is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Currency</mat-label>
+            <mat-select formControlName="currency">
+                <mat-option *ngFor="let currency of currencyList" [value]="currency">
+                    {{ currency }}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="form.controls['currency']?.hasError('required')">Currency is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Status</mat-label>
+            <mat-select formControlName="status">
+                <mat-option *ngFor="let status of statusList" [value]="status">
+                    {{ status }}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="form.controls['status']?.hasError('required')">Status is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Transaction Type</mat-label>
+            <mat-select formControlName="transactionType">
+                <mat-option *ngFor="let transactionType of transactionTypeList" [value]="transactionType">
+                    {{ transactionType }}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="form.controls['transactionType']?.hasError('required')">Transaction Type is
+                required</mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,31 @@
+<div class="toolbar">
+  <span style="margin-left: 20px;">Welcome Team</span>
+  <div class="spacer"></div>
+</div>
+
+<div class="container">
+  <div class="left">
+    <mat-list>
+      <mat-list-item (click)="onCreateClick()">
+        <mat-icon mat-list-icon>add_circle</mat-icon>
+        Create New Transaction
+      </mat-list-item>
+
+      <mat-list-item (click)="onGetAllClick()">
+        <mat-icon mat-list-icon>list</mat-icon>
+        Get All Transaction
+      </mat-list-item>
+
+      <mat-list-item (click)="onGetByIdClick()">
+        <mat-icon mat-list-icon>search</mat-icon>
+        Transaction By Id
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <div class="right">
+    <h2>Welcome to the Transaction Details</h2>
+    <router-outlet></router-outlet>
+  </div>
+
+
+</div>

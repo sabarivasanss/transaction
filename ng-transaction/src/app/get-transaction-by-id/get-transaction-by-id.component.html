@@ -1,0 +1,22 @@
+<form [formGroup]="form" class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Transaction Id</mat-label>
+      <input formControlName="id" matInput type="number">
+      <mat-hint align="start"><strong>Enter the valid Transaction ID</strong> </mat-hint>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit"  (click)="onSubmit(form)" [disabled]="form.invalid">Submit</button>
+  </form>
+
+
+  <mat-card class="example-card" *ngIf="transationDetail != null && this.form.valid">
+    <mat-card-title>Transaction Detail of {{transactionID}}</mat-card-title>
+    <mat-card-content>
+        <ul>
+            <li>Amount           : {{transationDetail.amount}}</li>
+            <li>Currency         : {{transationDetail.currency}}</li>
+            <li>Status           : {{transationDetail.status}}</li>
+            <li>Transaction Type : {{transationDetail.transactionType}}</li>
+        </ul>
+    </mat-card-content>
+  </mat-card>

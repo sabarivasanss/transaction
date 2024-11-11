@@ -1,0 +1,22 @@
+.div-container {
+    height: 35rem;
+    overflow: auto;
+    margin-top: 2rem;
+  }
+  
+  table {
+    width: 100%;
+  }
+
+
+
+
+
+  .sticky-header {
+    position: sticky;
+    top: 0;
+    background-color: white;  /* Ensure the header is visible */
+    z-index: 1;  /* Make sure the header is above the table rows */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Optional: Add a shadow to the sticky header */
+  }
+  
